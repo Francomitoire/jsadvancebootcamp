@@ -19,23 +19,13 @@ Promise.any([mirrorA(), mirrorB(), mirrorC()])
   .then((value) => console.log(value))
   .catch((error) => console.error(error));
 
-function mirrorAFails() {
-  return new Promise((_, reject) => {
-    setTimeout(() => reject(new Error("mirror A failed")), 300);
-  });
-}
-function mirrorBFails() {
-  return new Promise((_, reject) => {
-    setTimeout(() => reject(new Error("mirror B failed")), 500);
-  });
-}
 function mirrorCFails() {
   return new Promise((_, reject) => {
     setTimeout(() => reject(new Error("mirror C failed")), 800);
   });
 }
 
-Promise.any([mirrorAFails(), mirrorBFails(), mirrorCFails()])
+Promise.any([mirrorA(), mirrorB(), mirrorCFails()])
   .then((value) => console.log(value))
   .catch((error) => {
     if (error instanceof AggregateError) {
