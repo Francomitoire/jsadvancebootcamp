@@ -1,4 +1,5 @@
-// Luciano Gonzalez
+// cosme fulanito // Jeremias Sosa 
+
 function loadA() {
     return new Promise((resolve) => {
     setTimeout(resolve("bien1"), 1000)
@@ -9,7 +10,6 @@ function loadB() {
     setTimeout(resolve("bien2"), 2000)
     });
 }
-
 function loadC() {
     return new Promise((resolve ,reject) => {
     setTimeout(reject("error"), 1500)
