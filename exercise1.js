@@ -163,4 +163,3 @@ Promise.allSettled([promise1, promise2, promise3])
 */
 =======
 // Cosme fulanito
->>>>>>> 56e5970 (chore: rename file)
