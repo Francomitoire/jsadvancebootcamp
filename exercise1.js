@@ -1,3 +1,34 @@
+//Tobias Manquez
+
+
+function loadA() { 
+return new Promise((resolve) => setTimeout(() => resolve("Promise A resolved"), 1000));
+}
+
+function loadB() { 
+return new Promise((resolve) => setTimeout(() => resolve("Promise B resolved"), 2000));
+}
+
+function loadC() { 
+return new Promise((_, reject) => setTimeout(() => reject("Promise C rejected"), 1500));
+    
+}
+
+Promise.all([loadA(), loadB(), loadC()])
+    .then((resultados) => {
+        console.log("Todo se resolvió:", resultados);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+Promise.allSettled([loadA(), loadB(), loadC()])
+    .then((resultados) => {
+        console.log("Resultados de todas las promesas:", resultados);
+    });
+
+/*// Julieta 
+
 // Giovanni La Volpe
 
 function loadA() {
@@ -49,8 +80,8 @@ Promise.all([loadA(), loadB(), loadC()])
 
 Promise.allSettled([loadA(), loadB(), loadC()])
     .then((results)=>{ console.log(results)})
-*/
-/*//Santiago Barua
+
+//Santiago Barua
 function loadA() {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -129,23 +160,3 @@ Promise.allSettled([promise1, promise2, promise3])
     .then((values) => console.log(values))
     .catch((error) => console.log("error 2"));    
 */
-
-// function loadA(){
-//      return new Promise ((resolve) =>{
-//     setTimeout(() => resolve("Promise 1 resolved"),1000);
-// });}
-// function loadB(){
-//    return new Promise((resolve)=>{
-//     setTimeout(()=> resolve("promise 2 resolved"), 2000);
-// });}
-// function loadC(){ 
-//    return new Promise ((reject)=> {
-//     setTimeout(() => reject("promise 3 rejected"), 1500);
-// })}
-
-// Promise.all([loadA(), loadB(), loadC()])
-//  .then((results)=>{ console.log(results)})
-//     .catch((error)=>{ console.log(error)})
-
-// Promise.allSettled([loadA(), loadB(), loadC()])
-//     .then((results)=>{ console.log(results)})
