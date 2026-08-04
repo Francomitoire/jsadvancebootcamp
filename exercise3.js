@@ -1,3 +1,4 @@
+//Santiago Barua
 function mirrorA() {
   return new Promise((_, reject) => {
     setTimeout(() => reject(new Error("mirror A failed")), 300);
