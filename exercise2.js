@@ -14,3 +14,4 @@ Promise.race([work(), timeout(1000)])
 Promise.race([work(), timeout(2500)])
   .then((value) => console.log(value))
   .catch((error) => console.error(error.message));
+
