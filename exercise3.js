@@ -44,3 +44,4 @@ Promise.any([mirrorAFails(), mirrorBFails(), mirrorCFails()])
       console.error(error);
     }
   });
+
