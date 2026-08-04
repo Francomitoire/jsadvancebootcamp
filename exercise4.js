@@ -1,3 +1,4 @@
+//Jeremias Sosa
 function loadA() {
     return new Promise((resolve) => setTimeout(resolve, 1000, 'Tobias'))
 }
