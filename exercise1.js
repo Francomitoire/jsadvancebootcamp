@@ -26,6 +26,7 @@ Promise.allSettled([loadA(), loadB(), loadC()])
             }
         });
     });
+
 // Luciano Gonzalez
 function loadA() {
     return new Promise((resolve) => {
