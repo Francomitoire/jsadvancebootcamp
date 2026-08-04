@@ -1,3 +1,4 @@
+/*
 //luciano gonzalez
 function work() {
     return new Promise((resolve) => setTimeout(resolve, 2000, 'work done'))
@@ -20,7 +21,7 @@ Promise.race([work(), timeout(2500)])
 
 //Jeremias Sosa
 
-/*
+
 function work() {
     return new Promise((resolve) => setTimeout(resolve, 2000, 'Work ok'))
 }
@@ -69,6 +70,8 @@ Promise.race([work(), timeout(2500)])
 //  .then((value) => console.log(value))
 //  .catch((error) => console.error(error.message));
 */
+
+//Mayra Cueto
 function work () {
     return new Promise ((resolve) => {
         setTimeout(() => {
