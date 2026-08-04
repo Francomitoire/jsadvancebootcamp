@@ -29,6 +29,38 @@ Promise.allSettled([loadA(), loadB(), loadC()])
 
 /*// Julieta 
 
+// Giovanni La Volpe
+
+function loadA() {
+    return new Promise((resolve) => {
+    setTimeout(() => resolve("A true"), 1000);
+    });
+}
+
+function loadB() {
+    return new Promise((resolve) => {
+    setTimeout(() => resolve("B true"), 2000);
+    });
+}
+
+function loadC() {
+    return new Promise((_, reject) => {
+    setTimeout(() => reject("C failed"), 1500);
+    });
+}
+
+
+Promise.all([loadA(), loadB(), loadC()])
+    .then((values) => console.log(values))
+    .catch((error) => console.error(error));
+
+
+Promise.allSettled([loadA(), loadB(), loadC()])
+    .then((values) => console.log(values));
+
+
+// Julieta 
+/*
 function loadA(){
      return new Promise ((resolve) =>{
     setTimeout(() => resolve("Promise 1 resolved"),1000);
@@ -128,25 +160,3 @@ Promise.allSettled([promise1, promise2, promise3])
     .then((values) => console.log(values))
     .catch((error) => console.log("error 2"));    
 */
-
-//Gonzalo
-
-// function loadA(){
-//      return new Promise ((resolve) =>{
-//     setTimeout(() => resolve("Promise 1 resolved"),1000);
-// });}
-// function loadB(){
-//    return new Promise((resolve)=>{
-//     setTimeout(()=> resolve("promise 2 resolved"), 2000);
-// });}
-// function loadC(){ 
-//    return new Promise ((reject)=> {
-//     setTimeout(() => reject("promise 3 rejected"), 1500);
-// })}
-
-// Promise.all([loadA(), loadB(), loadC()])
-//  .then((results)=>{ console.log(results)})
-//     .catch((error)=>{ console.log(error)})
-
-// Promise.allSettled([loadA(), loadB(), loadC()])
-//     .then((results)=>{ console.log(results)})
