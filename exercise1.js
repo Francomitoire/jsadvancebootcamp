@@ -17,9 +17,15 @@ Promise.all([loadA(), loadB(), loadC()])
   .catch((error) => console.log("all catch:", error));
 
 Promise.allSettled([loadA(), loadB(), loadC()])
-  .then((results) => console.log("allSettled:", results))
-  .catch(() => console.log("esto nunca corre"));
-
+    .then((results) => {
+        results.forEach((resultsSettled) => {
+            if (resultsSettled.status === "fulfilled") {
+                console.log(`Resuelta: ${resultsSettled.value}`); // te da 'resuelta: A' 'resuelta: B'
+            } else {
+                console.log(`Rechazada: ${resultsSettled.value}, error: ${resultsSettled.reason}`); //  te da 'Rechazada: C Error: razon de por que'
+            }
+        });
+    });
 // Luciano Gonzalez
 function loadA() {
     return new Promise((resolve) => {
