@@ -1,4 +1,4 @@
-
+/*
 // Tobias Manquez
 
 let counter = 0;
@@ -22,6 +22,7 @@ async function incrementSequentiallytobias() {
 }
 
 incrementSequentiallytobias();
+*/
 
 // let counter = 0;
 
