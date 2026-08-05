@@ -27,3 +27,4 @@ function SantiagoBaruaExercise2(amounts = [12, 5, 5, 18]) {
 }
 
 SantiagoBaruaExercise2();
+
