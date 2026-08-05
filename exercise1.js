@@ -45,4 +45,4 @@ Promise.all([loadA(), loadB(), loadC()])
 
 Promise.allSettled([loadA(), loadB(), loadC()])
     .then((values) => console.log(values))
-    .catch((reason) =>console.log(reason))
+    .catch((reason) =>console.log(reason))3
