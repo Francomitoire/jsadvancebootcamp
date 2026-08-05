@@ -1,4 +1,4 @@
-function SantiagoBaruaExercise2() {
+function SantiagoBaruaExercise2(amounts = [12, 5, 5, 18]) {
     let balance = 0;
 
     function updateBalance(delta) {
@@ -11,7 +11,6 @@ function SantiagoBaruaExercise2() {
     }
 
     async function runSequentiallyBarua() {
-        const amounts = [10, 10, 10, 10];
         for (const amount of amounts) {
             await updateBalance(amount);
         }
@@ -20,10 +19,11 @@ function SantiagoBaruaExercise2() {
 
     async function runParallelBarua() {
         balance = 0;
-        const amounts = [10, 10, 10, 10];
         await Promise.all(amounts.map((amount) => updateBalance(amount)));
         console.log('Balance 2:', balance);
     }
 
     runSequentiallyBarua().then(() => runParallelBarua());
 }
+
+SantiagoBaruaExercise2();
