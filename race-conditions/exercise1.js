@@ -1,6 +1,6 @@
 let counter = 0;
 
-function incrementCounter() {
+function incrementCounterBarua() {
     return new Promise
     ((resolve) => {
         setTimeout(() => {
@@ -13,12 +13,12 @@ function incrementCounter() {
     });
 }
 
-async function incrementSequentially(times = 4) {
+async function incrementSequentiallyBarua(times = 4) {
     for (let i = 0; i < times; i += 1) {
-        await incrementCounter();
+        await incrementCounterBarua();
     }
 }
 
-incrementSequentially().then(() => {
+incrementSequentiallyBarua().then(() => {
     console.log(`Listo: ${counter}`);
 });
