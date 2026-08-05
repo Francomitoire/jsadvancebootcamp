@@ -1,20 +1,20 @@
 // Giovanni La Volpe
 
-function work(){
-    return new Promise((resolve)=>
-        setTimeout(()=> resolve("work done"), 2000));
-}
+// function work(){
+//     return new Promise((resolve)=>
+//         setTimeout(()=> resolve("work done"), 2000));
+// }
 
-const timeout = (ms) => new Promise((resolve, reject) => 
-    setTimeout(() => reject(new Error("timed out")), ms));
+// const timeout = (ms) => new Promise((resolve, reject) => 
+//     setTimeout(() => reject(new Error("timed out")), ms));
 
-Promise.race([work(),timeout(1000)])
-    .then((value)=> console.log(value))
-    .catch((error)=> console.log(error))
+// Promise.race([work(),timeout(1000)])
+//     .then((value)=> console.log(value))
+//     .catch((error)=> console.log(error))
 
-Promise.race([work(),timeout(2500)])
-    .then((value)=> console.log(value))
-    .catch((error)=> console.log(error))
+// Promise.race([work(),timeout(2500)])
+//     .then((value)=> console.log(value))
+//     .catch((error)=> console.log(error))
 
 
 //Julieta
@@ -31,9 +31,28 @@ Promise.race([work(),timeout(2500)])
 //     .then((value)=> console.log(value))
 //     .catch((error)=> console.log(error))
 /*
-//Santiago barua
-=======
+//luciano gonzalez
+function work() {
+    return new Promise((resolve) => setTimeout(resolve, 2000, 'work done'))
+}
+
+const timeout = (ms) => new Promise((_, reject) =>
+    setTimeout(() => reject(new Error("timed out")), ms)
+);
+
+Promise.race([work(), timeout(1000)])
+    .then((value) => {console.log(value)},
+    (reason) => {console.log(reason)},)
+
+Promise.race([work(), timeout(2500)])
+    .then((value) => {console.log(value)},
+        (reason) => {console.log(reason);})
+
+
+
+
 //Jeremias Sosa
+
 
 function work() {
     return new Promise((resolve) => setTimeout(resolve, 2000, 'Work ok'))
@@ -62,6 +81,9 @@ Promise.race([work(), timeout(2500)])
             console.log(reason);
         },
     );
+//
+
+
 //Santiago barua
 //function work() {
 //  return new Promise((resolve) => {
@@ -80,3 +102,24 @@ Promise.race([work(), timeout(2500)])
 //  .then((value) => console.log(value))
 //  .catch((error) => console.error(error.message));
 */
+
+//Mayra Cueto
+// function work () {
+//     return new Promise ((resolve) => {
+//         setTimeout(() => {
+//             resolve("Work Done");
+//         }, 2000
+//         );
+//     })
+// };
+
+// const timeout = (ms) => new Promise((_, reject) =>
+//   setTimeout(() => reject(new Error("timed out")), ms)
+// );
+
+// Promise.race([work(), timeout(1000)])
+// .then ((values) => console.log(values))
+// .catch((error) => console.log(error));
+
+// Promise.race([work(), timeout(2500)])
+// .then ((values) => console.log(values));
