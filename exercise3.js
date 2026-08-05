@@ -76,7 +76,7 @@ const mirrorA = () => new Promise((_, reject) => setTimeout(() => reject("Error 
 const mirrorB = () => new Promise((_, reject) => setTimeout(() => reject("Error B"), 500));
 const mirrorC = () => new Promise((resolve) => setTimeout(() => resolve("mirror C data"), 800));
 
-// Ejecución con éxito eventual
+
 Promise.any([mirrorA(), mirrorB(), mirrorC()])
   .then(data => {
     console.log(data);
