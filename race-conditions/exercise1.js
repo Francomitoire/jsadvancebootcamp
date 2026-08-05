@@ -1,7 +1,8 @@
 let counter = 0;
 
 function incrementCounter() {
-    return new Promise((resolve) => {
+    return new Promise
+    ((resolve) => {
         setTimeout(() => {
             const currentValue = counter;
             setTimeout(() => {
