@@ -26,7 +26,7 @@ async function incrementSecuentiallyGiovanni() {
 
 incrementSecuentiallyGiovanni();
 
-let counter = 0;
+/*let counter = 0;
 
 function incrementCounterJere() {
     return new Promise((resolve) => {
@@ -48,7 +48,7 @@ async function incrementSequentiallyJere(numberJere) {
 }
 
 incrementSequentiallyJere(4);
-
+*/
 /*
 // Tobias Manquez
 
