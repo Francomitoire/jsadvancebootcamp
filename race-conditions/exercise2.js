@@ -16,15 +16,18 @@ function JulietaExercise2() {
     }
 
     async function contarSecuencialmente() {
-        const llamados = [1, 2, 3, 4];
+        const llamados = [10, 10, 10, 10];
 
-        for (const llamado of llamados) {
-            await updateBalance(10);
+        for (const delta of llamados) {
+            await updateBalance(delta);
         }
-        console.log(balance);
+
+        return balance;
     }
 
-    contarSecuencialmente();
+    return contarSecuencialmente();
 }
 
-JulietaExercise2();
+const promesas = [JulietaExercise2()];
+Promise.all(promesas)
+    .then(([balance]) => console.log(balance));
