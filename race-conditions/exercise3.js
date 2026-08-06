@@ -1,6 +1,3 @@
-
-
-
 function lucianoGonzalezExercise3(){
 let contador = 0;
 
@@ -29,22 +26,6 @@ agregarACola(3);
 agregarACola(4);
 }
 lucianoGonzalezExercise3()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function SantiagoBaruaExercise3() {
     let balance = 0;
