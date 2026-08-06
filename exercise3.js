@@ -1,3 +1,30 @@
+
+//Mayra Cueto
+function mirrorA (){
+    return new Promise ((reject => {
+      setTimeout (() => {
+        reject ("mirrorA error");
+      }, 300
+    )
+    }))
+}
+function mirrorB (){
+    return new Promise ((reject => {
+      setTimeout (() => {
+        reject ("mirrorB error");
+      }, 500
+    );
+    }))
+}
+
+function mirrorC (){
+  return new Promise ((resolve) => {
+    setTimeout(() => {
+      resolve ("mirror C data");
+    }, 800
+  )
+  })
+}
 //Julieta
 
 // function mirrorA(){
