@@ -17,9 +17,9 @@ function mirrorB (){
 }
 
 function mirrorC (){
-  return new Promise ((reject) => {
+  return new Promise ((resolve) => {
     setTimeout(() => {
-      reject ("mirror C data");
+      resolve ("mirror C data");
     }, 800
   )
   })
@@ -27,11 +27,7 @@ function mirrorC (){
 
 Promise.any([mirrorA(), mirrorB(), mirrorC()])
   .then ((value) => console.log(value))
-  .catch((error) => {
-    if (error instanceof AggregateError) {
-      console.log(error.message);
-    }
-  });
+  .catch((error) => console.log(error));
 /*
 //Julieta
 
