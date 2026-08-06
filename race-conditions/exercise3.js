@@ -21,10 +21,10 @@ function MayraCuetoExercise3(){
            return updateBalance(delta).then((balance) => {
             console.log(`Resultado: ${balance}`);
             return balance;
-           })
         })
-        return colaPromesas;
-    }
+    })
+    return colaPromesas;
+}
 
     agregarACola(1);
     agregarACola(2);
