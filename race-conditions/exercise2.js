@@ -1,5 +1,5 @@
-function JulietaExercise2() {
-function SantiagoBaruaExercise2(amounts = [12, 5, 5, 18]) {
+   function JulietaExercise2() {
+
     let balance = 0;
 
     function updateBalance(delta) {
@@ -34,6 +34,8 @@ function SantiagoBaruaExercise2(amounts = [12, 5, 5, 18]) {
 const promesas = [JulietaExercise2()];
 Promise.all(promesas)
     .then(([balance]) => console.log(balance));
+function SantiagoBaruaExercise2(amounts = [12, 5, 5, 18]) {
+
     async function runSequentiallyBarua() {
         for (const amount of amounts) {
             await updateBalance(amount);
