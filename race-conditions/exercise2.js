@@ -16,17 +16,17 @@ async function mayraExercise2 (){
      })       
     }
 
-    
-    Promise.all ([updateBalance(10, 1), updateBalance(15, 2), updateBalance(15, 3), updateBalance(0, 4)])
-    .then (()=> console.log(`Balance promise: ${balance}`));
-
-
+    (async () => {
     for (let i= 0; i<4;i++){
-        (async () => {
             await updateBalance(10, 5);
-            await console.log (`Balance ${i}: ${balance}`); 
-        }) ();
-    }
+            console.log (`Balance ${i}: ${balance}`);
+        }
+        
+        Promise.all ([updateBalance(10, 1), updateBalance(15, 2), updateBalance(15, 3), updateBalance(0, 4)])
+        .then (()=> console.log(`Balance promise: ${balance}`));
+    }) ();
+        
+
 
 }
 
