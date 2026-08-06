@@ -74,3 +74,43 @@ function SantiagoBaruaExercise3() {
 
 SantiagoBaruaExercise3();
 */
+    
+
+TobiasExercise3();
+
+
+
+function Exercise3Gio() {
+    let balance = 0;
+
+    function updateBalance(delta) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                balance += delta;
+                resolve(balance);
+            }, Math.random() * 200);
+        });
+    }
+
+    function incrementCounterGio() {
+        return updateBalance(1).then((nuevoBalance) => {
+            console.log(`Balance: ${nuevoBalance}`);
+            return nuevoBalance;
+        });
+    }
+
+    let cola = Promise.resolve();
+
+    function runExclusive(task) {
+            cola = cola
+            .then(() => task());
+        return cola;
+    }
+
+    runExclusive(incrementCounterGio);
+    runExclusive(incrementCounterGio);
+    runExclusive(incrementCounterGio);
+    runExclusive(incrementCounterGio);
+}
+
+Exercise3Gio();
