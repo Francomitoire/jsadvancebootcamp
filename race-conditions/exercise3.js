@@ -1,38 +1,35 @@
-function SantiagoBaruaExercise3() {
-    let balance = 0;
+function jereExercise3() {
+    let counter = 0;
 
-    function updateBalance(delta) {
+    function updateCount(number) {
         return new Promise((resolve) => {
             setTimeout(() => {
-                balance += delta;
-                resolve(balance);
+                counter += number;
+                resolve(counter);
             }, Math.random() * 200);
         });
     }
-
-    function incrementCounter() {
-        return updateBalance(1).then((nuevoBalance) => {
-            console.log(`Balance: ${nuevoBalance}`);
-            return nuevoBalance;
+    function incrementCounterJere() {
+        return updateCount(1).then((countNumber) => {
+            console.log(`Balance: ${countNumber}`);
+            return countNumber;
         });
     }
-
     let colaDePromesas = Promise.resolve();
 
-    function runExclusive(task) {
+    function jereExclusive(task) {
         colaDePromesas = colaDePromesas
             .then(() => task())
             .catch((error) => {
                 console.error(error);
             });
-
         return colaDePromesas;
     }
 
-    runExclusive(incrementCounter);
-    runExclusive(incrementCounter);
-    runExclusive(incrementCounter);
-    runExclusive(incrementCounter);
+    jereExclusive(incrementCounterJere);
+    jereExclusive(incrementCounterJere);
+    jereExclusive(incrementCounterJere);
+    jereExclusive(incrementCounterJere);
 }
 
-SantiagoBaruaExercise3();
+jereExercise3();
