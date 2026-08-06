@@ -1,3 +1,32 @@
+function lucianoGonzalezExercise3(){
+let contador = 0;
+
+function updateBalanceLuciano(delta) {
+    return new Promise((resolve) => {
+    setTimeout(() => {
+    contador = delta
+    resolve(contador)
+        }, Math.random() * 200)
+    })
+}
+let colaPromesas = Promise.resolve()
+
+function agregarACola(delta) {
+colaPromesas = colaPromesas.then(() => {
+    return updateBalanceLuciano(delta).then((nuevoContador) => {
+    console.log(`Resultado: ${nuevoContador}`)
+        return nuevoContador
+        })
+    })
+    return colaPromesas;
+}
+agregarACola(1);
+agregarACola(2);
+agregarACola(3);
+agregarACola(4);
+}
+lucianoGonzalezExercise3()
+
 function SantiagoBaruaExercise3() {
     let balance = 0;
 
