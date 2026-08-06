@@ -28,10 +28,6 @@ paraleloLuciano()
 
 
 
-
-
-
-
 function exerciseJere() {
 
 let balanceJere = 0;
