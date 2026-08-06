@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Tobias Manquez
 
 
@@ -160,3 +161,6 @@ Promise.allSettled([promise1, promise2, promise3])
     .then((values) => console.log(values))
     .catch((error) => console.log("error 2"));    
 */
+=======
+// Cosme fulanito
+>>>>>>> 56e5970 (chore: rename file)
