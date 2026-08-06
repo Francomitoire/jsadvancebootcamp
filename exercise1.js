@@ -1,32 +1,6 @@
-<<<<<<< HEAD
+
 //Tobias Manquez
 
-
-function loadA() { 
-return new Promise((resolve) => setTimeout(() => resolve("Promise A resolved"), 1000));
-}
-
-function loadB() { 
-return new Promise((resolve) => setTimeout(() => resolve("Promise B resolved"), 2000));
-}
-
-function loadC() { 
-return new Promise((_, reject) => setTimeout(() => reject("Promise C rejected"), 1500));
-    
-}
-
-Promise.all([loadA(), loadB(), loadC()])
-    .then((resultados) => {
-        console.log("Todo se resolvió:", resultados);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-
-Promise.allSettled([loadA(), loadB(), loadC()])
-    .then((resultados) => {
-        console.log("Resultados de todas las promesas:", resultados);
-    });
 
 /*// Julieta 
 
@@ -139,6 +113,38 @@ Promise.allSettled([loadA(), loadB(), loadC()])
 //    });
 //
 //
+
+
+
+// // Mateo Roza
+
+// function loadA() { 
+//     return new Promise((resolve) => setTimeout(() => resolve("Promise A resolved"), 1000));
+// }
+
+// function loadB() { 
+//     return new Promise((resolve) => setTimeout(() => resolve("Promise B resolved"), 2000));
+// }
+
+// function loadC() { 
+//     return new Promise((_, reject) => setTimeout(() => reject("Promise C rejected"), 1500));
+// }
+
+// Promise.all([loadA(), loadB(), loadC()])
+//     .then((resultados) => {
+//         console.log("Todo se resolvió:", resultados);
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//     });
+
+// Promise.allSettled([loadA(), loadB(), loadC()])
+//     .then((resultados) => {
+//         console.log("Resultados de todas las promesas:", resultados);
+//     });
+
+
+
 // Mayra Cueto
 
 const promise1 = new Promise((resolve) => {
@@ -161,5 +167,5 @@ Promise.allSettled([promise1, promise2, promise3])
     .then((values) => console.log(values))
     .catch((error) => console.log("error 2"));    
 */
-=======
+
 // Cosme fulanito
