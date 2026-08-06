@@ -101,8 +101,6 @@ async function mayraExercise2 (){
             setTimeout(() => {
                 balance = balanceAnterior + delta;
                 resolve();
-                console.log (balanceAnterior)
-                console.log(order);
                 }, Math.random() * 200)
         }, 200 * Math.random())
      })       
