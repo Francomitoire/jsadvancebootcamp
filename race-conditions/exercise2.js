@@ -1,3 +1,70 @@
+function GioExercise2() {
+
+    const montos = [10, 10, 10, 10]
+    let balance = 0;
+    
+    function updateBalanceGio(delta) {
+        const balanceAlEmpezar = balance; 
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                balance = balanceAlEmpezar + delta;
+                resolve(balance);
+            }, Math.random() * 200);
+        });
+    }
+
+    async function updateSecuentiallyGio() {
+        for (monto of montos) {
+            await updateBalanceGio(monto);
+        }
+        console.log(`V SEC --- balance: ${balance}`)
+    }
+
+    async function updateParallelGio() {
+        balance = 0;
+        await Promise.all(montos.map((monto) => updateBalanceGio(monto)));
+        console.log(`V PAR --- balance: ${balance}`)
+    }
+
+    updateSecuentiallyGio().then(() => {
+        updateParallelGio();
+    });
+}
+
+GioExercise2();
+
+
+
+let contador = 0
+function updateBalanceLuciano(delta) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                contador += delta;
+                resolve(contador);
+            }, Math.random() * 200);
+        });
+    }
+
+    async function secuencialLuciano() {
+        const iteraciones = [1,2,3,4];
+        for (const iteracion of iteraciones) {
+            await updateBalanceLuciano(10);
+        }
+        console.log(contador);
+    }
+
+    async function paraleloLuciano(){
+        variables=[10,10,10,10]
+        await Promise.all(variables.map(variables=>updateBalanceLuciano(variables)))
+        console.log(contador)
+        
+    }
+
+secuencialLuciano()
+paraleloLuciano()
+
+
+
 function exerciseJere() {
 
 let balanceJere = 0;
