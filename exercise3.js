@@ -139,3 +139,33 @@ Promise.any([mirrorA_fail(), mirrorB_fail(), mirrorC_fail()])
       console.log("Razones de falla:", error.errors);
     }
   });
+
+// Giovanni La Volpe
+function mirrorA (){
+  return new Promise ((reject => {
+    setTimeout (() => {
+      reject ("mirrorA error");
+    }, 300
+  )
+  }))
+}
+function mirrorB (){
+  return new Promise ((reject => {
+    setTimeout (() => {
+      reject ("mirrorB error");
+    }, 500
+    );
+  } ))
+}
+
+function mirrorC (){
+  return new Promise ((resolve) => {
+    setTimeout(() => {
+      resolve ("mirror C data");
+    }, 800)
+  })
+}
+
+Promise.any([mirrorA(), mirrorB(), mirrorC()])
+  .then ((value) => console.log(value))
+  .catch((error) => console.log(error));
