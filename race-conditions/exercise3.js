@@ -1,3 +1,40 @@
+function MayraCuetoExercise3(){
+    let balance = 0;
+
+     function updateBalance (delta){
+        return new Promise((resolve) => {
+        setTimeout(() => {
+            balanceAnterior = balance;
+            setTimeout(() => {
+                balance = balanceAnterior + delta;
+                console.log (balance);
+                resolve(balance);
+                }, Math.random() * 200)
+        }, 200 * Math.random())
+     })       
+    }
+
+    let colaPromesas = Promise.resolve();
+
+    function agregarACola(delta){
+        colaPromesas = colaPromesas.then(()=>{
+           return updateBalance(delta).then((balance) => {
+            console.log(`Resultado: ${balance}`);
+            return balance;
+        })
+    })
+    return colaPromesas;
+}
+
+    agregarACola(1);
+    agregarACola(2);
+    agregarACola(3);
+    agregarACola(4);
+
+}
+MayraCuetoExercise3();
+
+/*
 function SantiagoBaruaExercise3() {
     let balance = 0;
 
@@ -178,3 +215,4 @@ function Exercise3Gio() {
 }
 
 Exercise3Gio();
+*/
